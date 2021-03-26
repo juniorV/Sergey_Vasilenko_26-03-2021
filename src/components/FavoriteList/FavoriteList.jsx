@@ -15,12 +15,12 @@ function FavoriteList(props) {
 	return (
 		<div>
 			<Card title="Favorite List">
-				{favorites.map(m => <Row key={m.id} style={{padding: '5px 0'}} align='middle'>
+				{favorites.length ? favorites.map(m => <Row key={m.id} style={{padding: '5px 0'}} align='middle'>
 					<Col span={20}>{m.name}</Col>
 					<Col span={4}>
 						<Button icon={<CloseOutlined />} onClick={() => removeMovie(m.id)}/>
 					</Col>
-				</Row>)}
+				</Row>) : <div>Favorites list is empty.</div>}
 			</Card>
 		</div>
 	)
